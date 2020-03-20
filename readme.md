@@ -21,6 +21,10 @@ Docker is the only dependency ([intro to docker
 here](https://docs.docker.com/get-started/)), and your user must have privileges to use
 it.
 
+We had to go back in time a bit to get everything to work. There are no versions of
+`sqrtOram` or `Obliv-C`. We used the latest commit of `sqrtOram` (`git checkout b0263f9`).
+Hoever, we had to go back to 2017 to get `Obliv-C` to work (`git checkout 601c81a`).
+
 example output
 --------------
 
