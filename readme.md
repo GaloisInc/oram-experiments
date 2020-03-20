@@ -29,6 +29,7 @@ example output
 --------------
 
 ```
+% sudo ./run.sh 10000
 Sending build context to Docker daemon  105.5kB
 Step 1/14 : FROM fedora:24
 ...
