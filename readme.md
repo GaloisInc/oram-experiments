@@ -7,8 +7,9 @@ This repo contains a mechanism to build Square-Root ORAM optimized for Garbled C
 `sqrtOram` (and `Obliv-C`, which it depends on) hasn't been updated in a while, and relies
 on older tools such as `glibc`.
 
-To run the binary search benchmark they reported in the paper
-([search.c](https://github.com/samee/sqrtOram/blob/master/bench/search.c)), simply run
+To run the binary search using square root ORAM in MPC benchmark they reported in the
+paper ([search.c](https://github.com/samee/sqrtOram/blob/master/bench/search.c)), simply
+run
 ```
     ./run.sh NUM
 ``` 

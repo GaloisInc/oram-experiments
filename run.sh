@@ -3,7 +3,7 @@
 
 set -e
 
-n=${1:10000}
+n=${1:-10000}
 
 docker build -t sqrtoram .
 docker run -it sqrtoram bash -c "cd sqrtOram && ./run-benchmark.sh $n"
