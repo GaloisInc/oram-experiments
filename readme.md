@@ -1,29 +1,27 @@
 oram-experiments
 ================
 
-This repo contains a mechanism to build Square-Root ORAM optimized for Garbled Circuits
-([implementation](https://github.com/samee/sqrtOram))
-([paper](https://www.cs.umd.edu/~jkatz/papers/sqoram.pdf)).  We use Docker because
-`sqrtOram` (and `Obliv-C`, which it depends on) hasn't been updated in a while, and relies
-on older tools such as `glibc`.
-Obliv-C is an MPC engine, and sqrtOram is an implementation of ORAM inside it. The Obliv-C
-documentation is available [here](https://oblivc.org/documentation/).
+This repo is for demonstrating a baseline capacity of ORAM by using the `sqrtOram`
+library.  It contains a mechanism to build and run Square-Root ORAM optimized for Garbled
+Circuits ([implementation](https://github.com/samee/sqrtOram))
+([paper](https://www.cs.umd.edu/~jkatz/papers/sqoram.pdf)).  Obliv-C is an MPC engine, and
+sqrtOram is an implementation of ORAM inside it. The Obliv-C documentation is available
+[here](https://oblivc.org/documentation/). This repo also runs one of the benchmarks which
+is reported on the paper, which performs a binary search using square-root ORAM.
 
-To run the binary search using square root ORAM in MPC benchmark they reported in the
-paper ([search.c](https://github.com/samee/sqrtOram/blob/master/bench/search.c)), simply
-run
+To run the benchmark
+([search.c](https://github.com/samee/sqrtOram/blob/master/bench/search.c)), simply run
 ```
     ./run.sh NUM
 ``` 
 where `NUM` is the size of the ORAM instance you'd like to benchmark. 
 
-Docker is the only dependency ([intro to docker
-here](https://docs.docker.com/get-started/)), and your user must have privileges to use
-it.
-
-We had to go back in time a bit to get everything to work. There are no versions of
-`sqrtOram` or `Obliv-C`. We used the latest commit of `sqrtOram` (`git checkout b0263f9`).
-Hoever, we had to go back to 2017 to get `Obliv-C` to work (`git checkout 601c81a`).
+Docker is the only dependency ([intro to docker](https://docs.docker.com/get-started/)),
+and your user must have privileges to use it.
+We use Docker to build `sqrtOram` (and `Obliv-C`, which it depends on).  We had to go back
+in time a bit to get everything to work. We used the latest commit of `sqrtOram` (`git
+checkout b0263f9`).  However, we had to go back to 2017 to get `Obliv-C` to work (`git
+checkout 601c81a`).
 
 example output
 --------------
