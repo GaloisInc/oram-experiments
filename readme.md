@@ -12,5 +12,6 @@ To run the binary search benchmark they reported in the paper
 ```
     ./run.sh NUM
 ``` 
-where `NUM` is the size of the ORAM instance you'd like to benchmark. Docker
-is the only dependency, and your user must have privileges to use it.
+where `NUM` is the size of the ORAM instance you'd like to benchmark. 
+
+Docker is the only dependency, and your user must have privileges to use it.
