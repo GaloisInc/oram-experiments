@@ -1,6 +1,9 @@
 #!/bin/bash
+# builds sqrtOram in a docker container and runs the binary search benchmark once on n items
 
-set -xe
+set -e
 
-./search bench :12345 --oramtype=sqrt -z500 -c100 &
-./search bench localhost:12345 --oramtype=sqrt -z500 -c100
+n=${1:10000}
+
+docker build -t sqrtoram .
+docker run -it sqrtoram bash -c "cd sqrtOram && ./run-benchmark.sh $n"

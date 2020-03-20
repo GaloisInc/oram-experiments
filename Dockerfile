@@ -39,9 +39,8 @@ RUN cd sqrtOram &&\
         export OBLIVC_PATH=/obliv-c &&\
         make
 
-# build tests
-COPY build.sh sqrtOram/build.sh
-RUN cd sqrtOram && bash build.sh
-
-# copy tests over
-COPY run.sh sqrtOram/run.sh
+# prepare benchmarks
+RUN dnf install -y time
+COPY container-scripts/build-benchmark.sh sqrtOram
+RUN cd sqrtOram && ./build-benchmark.sh
+COPY container-scripts/run-benchmark.sh sqrtOram
