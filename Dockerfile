@@ -39,6 +39,9 @@ RUN cd sqrtOram &&\
         export OBLIVC_PATH=/obliv-c &&\
         make
 
-# build a test successfully
-RUN cd sqrtOram &&\
-        /obliv-c/bin/oblivcc -Ioram -Iutil -Lbuild -loram -lm util/util.c test/testOramAccess.oc test/testOramAccess.c
+# build tests
+COPY build.sh sqrtOram/build.sh
+RUN cd sqrtOram && bash build.sh
+
+# copy tests over
+COPY run.sh sqrtOram/run.sh
